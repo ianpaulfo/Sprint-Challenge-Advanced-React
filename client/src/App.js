@@ -2,9 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
+import PlayerList from "./components/PlayerList";
+import { useDarkMode } from "./hooks/useDarkMode";
 
 
 class App extends React.Component {
+
   constructor() {
     super();
     this.state = {
@@ -26,8 +29,9 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Women's World Cup</h1>
-        {/* <NavBar />
-        <PlayerList /> */}
+        <PlayerList 
+           players={this.state.players}
+        />
       </div>
     );
   }
